@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@100;200&display=swap")
+@import "variables"
+*
+  font:
+    family: "Open Sans", sans-serif
+  margin: 0
+  padding: 0
+  text-decoration: none
+
+::selection
+  color: white
+  background-color: $main-color
+
+html 
+  scroll-behavior: smooth
+
+ul 
+  list-style: none
+
+section
+  padding: 60px 0px
+
+.container 
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+
+.title
+  width: fit-content
+  margin-left: auto
+  margin-right: auto
+  margin-bottom: 40px
+  text-align: center
+  .main
+    font:
+      size: 1.8rem
+      weight: bold
+  .secondary
+    font: 
+      size: 1rem
+    color: $grey
+    &::before
+      content: "- "
+    &::after
+      content: " -"
+
+%more-btn
+  text-align: center
+  height: 20px
+  width: 80px
+  background-color: $main-color
+  color: white
+  padding: 8px 30px
+  margin-top: 20px
+  cursor: pointer
+
+.btn
+  @extend %more-btn
+// Small 
+@media (min-width: 768px) 
+  .container 
+    width: 750px
+// Medium
+@media (min-width: 992px)
+  .container
+    width: 970px
+//  Large
+@media (min-width: 1200px)
+  .container
+    width: 1170px
