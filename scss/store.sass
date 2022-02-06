@@ -8,6 +8,8 @@ header
     display: flex
     justify-content: space-between
     align-items: center
+    @media screen and ( max-width: 767px )
+      flex-direction: column
   .logo
     height: 70px
     display: flex
@@ -16,6 +18,10 @@ header
     font:
       size: 2rem
       weight: bold
+    @media screen and ( max-width: 767px )
+      color: $main-color
+      height: 55px
+      font-size: 1.7rem
   .links
     display: flex
     align-items: center
@@ -29,21 +35,32 @@ header
         padding: 0 10px
         margin-left: 15px
         color: $black
+        @media screen and ( max-width: 767px )
+          font-size: 1rem
+          padding: 0 5px
+          height: 50px
         &:hover,
         &:active
           color: white
           background-color: $main-color
+  .number
+    display: flex
+    align-items: center
+    height: 70px
+    @media screen and ( max-width: 767px )
+      height: 50px
 
 .landing 
   overflow: hidden
   padding: 0
+  @media screen and ( max-width: 991px )
+    background-color: $off-white
   .container
     position: relative
     display: flex
     justify-content: center
     align-items: center
-    gap: 20px
-    height: calc( 100vh - 70px )
+    height: calc( 100vh - 155px )
     transition: $duration
     &::before
       content: "HOME"
@@ -69,16 +86,23 @@ header
     p
       margin-top: 20px
       margin-bottom: 20px
+    @media screen and ( max-width: 991px )
+      align-items: center
+      width: 90%
+      > h1
+        font-size: 3rem
   .image
     position: relative
     right: -100px
+    bottom: -60px
     height: 100%
-    width: 60%
+    width: 50%
     display: flex
     align-items: center
-    transform: scale(1.1)
     img 
       width: 100%
+    @media (max-width: 991px)
+      display: none
 
 .about
   min-height: calc( 100vh - 120px )
@@ -86,10 +110,14 @@ header
     display: flex
     align-items: center
     gap: 30px
+    @media screen and ( max-width: 991px )
+      flex-direction: column
     .text
       flex: 1
       display: flex
       flex-direction: column
+      @media screen and ( max-width: 991px )
+        order: 2
       .history
         .date
           margin-bottom: 5px
@@ -109,6 +137,9 @@ header
       height: 400px
       overflow: hidden
       border-radius: 10px 
+      @media screen and ( max-width: 767px )
+        order: 1
+        width: 80%
       img
         width: 100%
         object-fit: contain
@@ -119,14 +150,15 @@ header
   position: relative
   .container
     display: grid
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
-    grid-gap: 50px
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    grid-gap: 30px
+    @media screen and ( max-width: 991px )
+      grid-gap: 20px
     .image
       width: 100%
       aspect-ratio: 1
       text-align: center 
       overflow: hidden
-      border: 10px solid $main-color
       border-radius: 10px
       position: relative
       .text
@@ -140,7 +172,8 @@ header
           color: $main-color
           font-size: 1.3em
       img
-        width: 100%
+        border: 10px solid $main-color
+        width: calc(100% - 20px)
       &::before
         position: absolute
         content: ""
@@ -162,6 +195,12 @@ header
     justify-content: center
     align-items: center
     padding-bottom: 60px
+    .form
+      @media screen and ( max-width:  767px)
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 20px
     #email
       height: 38px
       width: 300px
@@ -183,6 +222,8 @@ footer
     align-items: flex-start
     gap: 20px
     overflow: hidden
+    @media screen and ( max-width: 767px )
+      flex-direction: column
     span,p
       opacity: 0.7
     .links 
@@ -199,3 +240,6 @@ footer
     min-width: 25%
   .col-3
     min-width: 25%
+
+
+// responsive part
